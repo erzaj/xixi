@@ -141,6 +141,9 @@ const cekwallet = (sessionnya, uniknya) => new Promise((resolve, reject) => {
     try{
         
         const uniknya = bikinunik(16);
+        console.log(chalk.yellow("Send RP Go-Pay"));
+        console.log(chalk.yellow("Powered by Erza Jullian - Easy to Learn"));
+        console.log("");
         const cekwalletsaya = await cekwallet(sessionnya, uniknya);
         const balancesaya = chalk.green(`${cekwalletsaya.data.balance}`);
         console.log(chalk.yellow(`Send RP Go-Jek`));
