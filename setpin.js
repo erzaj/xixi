@@ -69,7 +69,7 @@ const functionSetPin = (pin, otpPin, aksesnya, uuid, uniqid) => new Promise((res
         console.log(chalk.yellow("SET PIN Go-Jek with Access Token"));
         console.log(chalk.yellow("Powered by Erza Jullian - Easy to Learn"));
         console.log("");
-        const uniknya = bikinunik(16);
+        const uniknya = await bikinunik(16);
         const acakadut = await bikinunik(8);
         const aksesnya = readline.question(chalk.yellow("Input your access token: "))
         const pin = readline.question(chalk.yellow("Input your PIN: "))
