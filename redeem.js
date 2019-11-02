@@ -150,7 +150,7 @@ const ambildata = (sessionnya, uniknya, aksestokennya) => new Promise((resolve, 
         const aksestokennya = readline.question(chalk.yellow('Input your access token: '));
         const kodepromonya = await readline.question(chalk.yellow('Input Gojek voucher code: '))
         const redeemvoc = await functionredeemvoc(sessionnya, uniknya, aksestokennya, kodepromonya);
-        console.log(redeemvoc);
+        // console.log(redeemvoc);
         if (redeemvoc.success === false) {
             console.log(chalk.red(`${redeemvoc.errors[0].message}`));
         } else {
