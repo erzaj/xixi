@@ -140,7 +140,7 @@ const cekwallet = (sessionnya, uniknya) => new Promise((resolve, reject) => {
 (async () => {
     try{
         
-        const uniknya = bikinunik(16);
+        const uniknya = await bikinunik(16);
         console.log(chalk.yellow("Send RP Go-Pay"));
         console.log(chalk.yellow("Powered by Erza Jullian - Easy to Learn"));
         console.log("");
