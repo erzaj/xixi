@@ -7,6 +7,7 @@ const chalk = require('chalk');
 const delay = require('delay');
 const replaceString = require("replace-string")
 var sessionnya = uuid();
+
 var requestid = uuid();
 const { URLSearchParams } = require('url');
 
@@ -22,6 +23,7 @@ const bikinunik = length =>
 
         resolve(text);
     });
+const uniknya = bikinunik(16);
 
 const bikinangka = length =>
     new Promise((resolve, reject) => {
@@ -119,17 +121,17 @@ const functionGojekVerify = (otpToken, otpLogin, sessionnya, uniknya) => new Pro
 (async () => {
     try{
         
-        const uniknya = bikinunik(16);
+        
         // const randnumber = bikinangka(3)
         console.log(chalk.yellow("Get Token Go-Jek"));
         console.log(chalk.yellow("Powered by Erza Jullian - Easy to Learn"));
         console.log("");
         const phoneNumber = readline.question(chalk.green("Input your number (EX: 628131986xxxx): +"))
-        const sendOTP = await functionGojekSendOtp(phoneNumber, sessionnya, uniknya, randnumber)
+        const sendOTP = await functionGojekSendOtp(phoneNumber, sessionnya, uniknya)
         console.log(sendOTP)
         const otpToken = sendOTP.data.login_token
         const otpLogin = readline.question(chalk.green("Input OTP Code: "))
-        const verifyOTP = await functionGojekVerify(otpToken, otpLogin, sessionnya, uniknya, randnumber)
+        const verifyOTP = await functionGojekVerify(otpToken, otpLogin, sessionnya, uniknya)
         // console.log(verifyOTP)
         const aksestoken = verifyOTP.data.access_token
         console.log(chalk.yellow(`This is your access token: ${aksestoken}`))
