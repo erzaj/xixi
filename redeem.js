@@ -146,7 +146,7 @@ const ambildata = (sessionnya, uniknya, aksestokennya) => new Promise((resolve, 
         console.log(chalk.yellow("Redeem Voucher Go-Jek with Access Token"));
 	console.log(chalk.yellow("Powered by Erza Jullian - Easy to Learn"));
 	console.log("");
-        const uniknya = bikinunik(16);
+        const uniknya = await bikinunik(16);
         const aksestokennya = readline.question(chalk.yellow('Input your access token: '));
         const kodepromonya = await readline.question(chalk.yellow('Input Gojek voucher code: '))
         const redeemvoc = await functionredeemvoc(sessionnya, uniknya, aksestokennya, kodepromonya);
