@@ -122,6 +122,9 @@ const functionGojekVerify = (otpToken, otpLogin, sessionnya, uniknya) => new Pro
         
         const uniknya = bikinunik(16);
         // const randnumber = bikinangka(3)
+        console.log(chalk.yellow("Get Token Go-Jek"));
+        console.log(chalk.yellow("Powered by Erza Jullian - Easy to Learn"));
+        console.log("");
         const phoneNumber = readline.question(chalk.green("Input your number (EX: 628131986xxxx): +"))
         const sendOTP = await functionGojekSendOtp(phoneNumber, sessionnya, uniknya, randnumber)
         console.log(sendOTP)
