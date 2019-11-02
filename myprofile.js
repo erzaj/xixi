@@ -159,6 +159,10 @@ const functionredeemvoc = (sessionnya, uniknya, aksesnya) => new Promise((resolv
 
 (async () => {
     try{
+	
+	console.log(chalk.yellow("Check Profile with Access Token"));
+	console.log(chalk.yellow("Powered by Erza Jullian - Easy to Learn"));
+	console.log("");
         const uniknya = bikinunik(16);
         const checkacc = await functionredeemvoc(sessionnya, uniknya, aksesnya);
         console.log(chalk.green(`Checking account...`));
