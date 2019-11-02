@@ -7,7 +7,6 @@ const chalk = require('chalk');
 const delay = require('delay');
 const replaceString = require("replace-string")
 var sessionnya = uuid();
-
 var requestid = uuid();
 const { URLSearchParams } = require('url');
 
@@ -23,7 +22,6 @@ const bikinunik = length =>
 
         resolve(text);
     });
-const uniknya = bikinunik(16);
 
 const bikinangka = length =>
     new Promise((resolve, reject) => {
@@ -53,7 +51,7 @@ const functionGojekSendOtp = (phoneNumber, sessionnya, uniknya, randnumber) => n
             'Accept': 'application/json',
             'X-PhoneModel': 'Android,Custom',
             'X-PushTokenType': 'FCM',
-            'X-DeviceOS': 'Android,6.0', 
+            'X-DeviceOS': 'Android,6.0',
             'Authorization': 'Bearer',
             'Accept-Language': 'en-ID',
             'X-User-Locale': 'en_ID',
@@ -98,7 +96,7 @@ const functionGojekVerify = (otpToken, otpLogin, sessionnya, uniknya) => new Pro
             'Accept': 'application/json',
             'X-PhoneModel': 'Android,Custom',
             'X-PushTokenType': 'FCM',
-            'X-DeviceOS': 'Android,6.0', 
+            'X-DeviceOS': 'Android,6.0',
             'Authorization': 'Bearer',
             'Accept-Language': 'en-ID',
             'X-User-Locale': 'en_ID',
@@ -120,9 +118,8 @@ const functionGojekVerify = (otpToken, otpLogin, sessionnya, uniknya) => new Pro
 
 (async () => {
     try{
-        
-        
-        // const randnumber = bikinangka(3)
+
+        const uniknya = await bikinunik(16);
         console.log(chalk.yellow("Get Token Go-Jek"));
         console.log(chalk.yellow("Powered by Erza Jullian - Easy to Learn"));
         console.log("");
@@ -137,9 +134,9 @@ const functionGojekVerify = (otpToken, otpLogin, sessionnya, uniknya) => new Pro
         console.log(chalk.yellow(`This is your access token: ${aksestoken}`))
 
 
-        
+
     }catch(e){
-        console.log(e) 
+        console.log(e)
     }
 
 })();
