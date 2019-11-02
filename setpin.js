@@ -2,7 +2,6 @@ const fetch = require('node-fetch');
 const readline = require('readline-sync');
 const uuid = require('uuid/v4');
 const cheerio = require('cheerio');
-const fs = require('async-file');
 const chalk = require('chalk');
 const delay = require('delay');
 const replaceString = require("replace-string")
